@@ -12,6 +12,8 @@ internal class Program
           XmlRead  i_XmlRead   = new XmlRead();
           XmlWrite i_XmlWrite  = new XmlWrite();
 
+          Personne personne = new Personne();
+
 
 
           // Properties -----------------------------------------------------------------------------------------------------------------------------
