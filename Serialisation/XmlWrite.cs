@@ -49,40 +49,19 @@ namespace Serialisation
 
 
 
-               // Ecriture dans le fichier 2ème exemple
-               //writer.WriteStartElement("Personne");
-
-               //writer.WriteStartElement("Nom");
-               //writer.WriteValue("DUPOND");
-               //writer.WriteEndElement();
-
-               //writer.WriteElementString("Prenom", "Victor");
-               //writer.WriteElementString("DateDeNaissance", "1988-12-18T00:00:00");
-
-               //writer.WriteStartElement("Taille");
-               //writer.WriteValue(181);
-               //writer.WriteEndElement();
-
-               //writer.WriteEndElement();
-               //writer.Flush();
-
-
-               //XmlRead i_XmlRead = new XmlRead();
-               i_XmlRead.m_XmlRead("TP_01.xml");
-
-               // Ecriture dans le fichier 3ème exemple
+               //Ecriture dans le fichier 2ème exemple
                writer.WriteStartElement("Personne");
 
-                    writer.WriteStartElement("Nom");
-                    writer.WriteValue(personne.Nom);
-                    writer.WriteEndElement();
+               writer.WriteStartElement("Nom");
+               writer.WriteValue("DUPOND");
+               writer.WriteEndElement();
 
-                    writer.WriteElementString("Prenom", personne.Prenom);
-                    writer.WriteElementString("DateDeNaissance", personne.DateDeNaissance.ToString());
+               writer.WriteElementString("Prenom", "Victor");
+               writer.WriteElementString("DateDeNaissance", "1988-12-18T00:00:00");
 
-                    writer.WriteStartElement("Taille");
-                    writer.WriteValue(personne.Taille);
-                    writer.WriteEndElement();
+               writer.WriteStartElement("Taille");
+               writer.WriteValue(181);
+               writer.WriteEndElement();
 
                writer.WriteEndElement();
                writer.Flush();
