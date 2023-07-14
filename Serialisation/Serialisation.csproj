@@ -8,6 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Program.Methods.Shared.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Program.Methods.Shared.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="TP_01.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

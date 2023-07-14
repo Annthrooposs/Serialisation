@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.PortableExecutable;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Xml;
 
 namespace Serialisation
@@ -11,8 +6,9 @@ namespace Serialisation
      internal class XmlWrite
      {
 
-          // Fields ---------------------------------------------------------------------------------------------------------------------------------
-
+          // Fields --------------------------------------------------------------------------------------------------------------------------------- 
+          //Personne personne = new Personne();
+          XmlRead i_XmlRead = new XmlRead();
 
 
           // Properties -----------------------------------------------------------------------------------------------------------------------------
@@ -37,64 +33,59 @@ namespace Serialisation
 
 
                // Treatment -------------------------------------------------------------------------------------------------------------------------
-               // Ecriture dans le fichier
-               writer.WriteStartElement("Client");
+               // Ecriture dans le fichier 1er exemple
+               //writer.WriteStartElement("Client");
 
-               writer.WriteElementString("Identité", "Jean-Charles POGAM");
-               // ou
-               writer.WriteStartElement("Identité");
-               writer.WriteValue("Pascale POGAM");
-               writer.WriteEndElement();
+               //writer.WriteElementString("Identité", "Jean-Charles POGAM");
+               //// ou
+               //writer.WriteStartElement("Identité");
+               //writer.WriteValue("Pascale POGAM");
+               //writer.WriteEndElement();
 
-               writer.WriteEndElement();
-
-
-               writer.Flush();
-
-
-
-               //// Affichage à l'écran
-               //// Parcours du fichier XML venat d'être créé
-               //XmlReader reader = XmlReader.Create(@p_file);
-               //XmlRead i_XmlRead = new XmlRead();
-
-               //reader.MoveToContent();
-
-               //reader.ReadStartElement("Client");
-
-               //reader.ReadStartElement("Identité");
-               //var identité = reader.ReadContentAsString();
-               //reader.ReadEndElement();
-
-               //reader.ReadEndElement();
-
-
-
-               //// Affichage à l'écran
-               //Console.WriteLine($"{identité}");
+               //writer.WriteEndElement();
+               //writer.Flush();
 
 
 
 
 
-               //reader.MoveToContent();
-
-
+               // Ecriture dans le fichier 2ème exemple
                //writer.WriteStartElement("Personne");
 
                //writer.WriteStartElement("Nom");
                //writer.WriteValue("DUPOND");
                //writer.WriteEndElement();
 
-               //writer.WriteElementString("Prenom", Victor);
-
-               //writer.WriteElementString("DateDeNaissance", Victor);
+               //writer.WriteElementString("Prenom", "Victor");
+               //writer.WriteElementString("DateDeNaissance", "1988-12-18T00:00:00");
 
                //writer.WriteStartElement("Taille");
                //writer.WriteValue(181);
                //writer.WriteEndElement();
 
-               //reader.WriteEndElement();
+               //writer.WriteEndElement();
+               //writer.Flush();
+
+
+               //XmlRead i_XmlRead = new XmlRead();
+               i_XmlRead.m_XmlRead("TP_01.xml");
+
+               // Ecriture dans le fichier 3ème exemple
+               writer.WriteStartElement("Personne");
+
+                    writer.WriteStartElement("Nom");
+                    writer.WriteValue(personne.Nom);
+                    writer.WriteEndElement();
+
+                    writer.WriteElementString("Prenom", personne.Prenom);
+                    writer.WriteElementString("DateDeNaissance", personne.DateDeNaissance.ToString());
+
+                    writer.WriteStartElement("Taille");
+                    writer.WriteValue(personne.Taille);
+                    writer.WriteEndElement();
+
+               writer.WriteEndElement();
+               writer.Flush();
           }
      }
 }
