@@ -28,6 +28,7 @@ internal class Program
           i_XmlRead.m_XmlRead("TP_01.xml");
           i_XmlWrite.m_XmlWrite("TP_01_WrittenByJCP.xml");
           i_XmlReadWrite.m_XmlReadWrite("TP_01.xml", "TP_01_ReadWrittenByJCP.xml");
+          //i_XmlReadWrite.m_XmlReadWrite("TP_01.xml");
 
      }
 }
