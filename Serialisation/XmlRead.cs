@@ -59,7 +59,7 @@ namespace Serialisation
 
 
                // Affichage à l'écran
-               Console.WriteLine($"{ personne.Prenom} {personne.Nom} est né(e) le {personne.DateDeNaissance:dd/MM/yyyy} et mesure {personne.Taille} cm");
+               Console.WriteLine($"m_XmlRead : { personne.Prenom} {personne.Nom} est né(e) le {personne.DateDeNaissance:dd/MM/yyyy} et mesure {personne.Taille} cm");
           }
      }
 }
