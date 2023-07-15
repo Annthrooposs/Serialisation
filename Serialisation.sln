@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialisation", "Serialisation\Serialisation.csproj", "{3D716712-34AE-4C89-8622-3A2108DCC93D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerialisationStream", "Serialisation\SerialisationStream.csproj", "{3D716712-34AE-4C89-8622-3A2108DCC93D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
