@@ -11,8 +11,7 @@ internal class Program
           // Fields ---------------------------------------------------------------------------------------------------------------------------------
           XmlRead  i_XmlRead   = new XmlRead();
           XmlWrite i_XmlWrite  = new XmlWrite();
-
-          Personne personne = new Personne();
+          XmlReadWrite i_XmlReadWrite = new XmlReadWrite();
 
 
 
@@ -28,6 +27,8 @@ internal class Program
           // Routing --------------------------------------------------------------------------------------------------------------------------------
           i_XmlRead.m_XmlRead("TP_01.xml");
           i_XmlWrite.m_XmlWrite("TP_01_WrittenByJCP.xml");
+          i_XmlReadWrite.m_XmlReadWrite("TP_01.xml", "TP_01_ReadWrittenByJCP.xml");
+          //i_XmlReadWrite.m_XmlReadWrite("TP_01.xml");
 
      }
 }
