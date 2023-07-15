@@ -113,6 +113,11 @@ namespace SerialisationXDocument
                          elementTaille.AddAfterSelf(adresse2);
                     }
                }
+
+
+
+               // Affichage à l'écran
+               Console.WriteLine($"m_XmlDocumentAdd : {doc.ToString()}");
           }
      }
 }
