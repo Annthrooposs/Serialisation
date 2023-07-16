@@ -6,7 +6,7 @@ using SerialisationUtf8JsonReader;
 
 
 // Locals -------------------------------------------------------------------------------------------------------------------------------------------
-SerialisationUtf8JsonReader.Utf8JsonReader is_Utf8JsonReader = new SerialisationUtf8JsonReader.Utf8JsonReader();
+c_Utf8JsonReader is_Utf8JsonReader = new c_Utf8JsonReader();
 
 
 

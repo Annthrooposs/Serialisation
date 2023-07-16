@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace SerialisationUtf8JsonReader
 {
-     internal class Utf8JsonReader
+     internal class c_Utf8JsonReader
      {
           // Fields ---------------------------------------------------------------------------------------------------------------------------------
           string jsonData = """
@@ -17,10 +18,11 @@ namespace SerialisationUtf8JsonReader
                     "age"     : 33
                }
                """;
-          Utf8JsonReader i_redear = new Utf8JsonReader(Encoding.UTF8.GetBytes(jsonData));
+
 
 
           // Properties -----------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -32,13 +34,35 @@ namespace SerialisationUtf8JsonReader
           public void m_Utf8JsonReader()
           {
                // Locals ----------------------------------------------------------------------------------------------------------------------------
-
+               Utf8JsonReader reader = new Utf8JsonReader(Encoding.UTF8.GetBytes(jsonData),
+                    new JsonReaderOptions
+                    {
+                         AllowTrailingCommas = true,
+                         MaxDepth            = 12,
+                         CommentHandling     = JsonCommentHandling.Skip
+                    }
+               );
 
 
 
 
                // Treatment -------------------------------------------------------------------------------------------------------------------------
                // Parcours du fichier XML
+               while (reader.Read())
+               {
+                    if(reader.TokenType == JsonTokenType.PropertyName)
+                    {
+                         Console.WriteLine($"Je lis le nom d'une propriété : {reader.GetString()}");
+                    }
+                    else if (reader.TokenType == JsonTokenType.String)
+                    {
+                         Console.WriteLine($"Je lis du contenu (chaîne) : {reader.GetString()}");
+                    }
+                    else if (reader.TokenType == JsonTokenType.Number)
+                    {
+                         Console.WriteLine($"Je lis du contenu (nombre) : {reader.GetInt32()}");
+                    }
+               }
           }
      }
 }
