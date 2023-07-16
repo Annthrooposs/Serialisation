@@ -1,12 +1,14 @@
 ﻿
-using SerialisationXDocument;
+using System.Text.Json;
+using System.Xml;
 
+using SerialisationUtf8JsonReader;
 
 
 // Locals -------------------------------------------------------------------------------------------------------------------------------------------
-XmlXDocument i_XmlXDocument = new XmlXDocument();
+SerialisationUtf8JsonReader.Utf8JsonReader is_Utf8JsonReader = new SerialisationUtf8JsonReader.Utf8JsonReader();
 
 
 
 // Routing ------------------------------------------------------------------------------------------------------------------------------------------
-i_XmlXDocument.m_XmlDocument("TP_01.xml");
+is_Utf8JsonReader.m_Utf8JsonReader();
