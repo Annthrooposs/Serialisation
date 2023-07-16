@@ -6,18 +6,12 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace SerialisationUtf8JsonReader
+namespace SerialisationUtf8Json
 {
-     internal class c_Utf8JsonReader
+     internal class SerialisationUtf8JsonReader
      {
           // Fields ---------------------------------------------------------------------------------------------------------------------------------
-          string jsonData = """
-               {
-                    "nom"     : "POGAM",
-                    "prenom"  : "Jean-Charles",
-                    "age"     : 33
-               }
-               """;
+
 
 
 
@@ -31,10 +25,10 @@ namespace SerialisationUtf8JsonReader
 
 
           // Methods --------------------------------------------------------------------------------------------------------------------------------
-          public void m_Utf8JsonReader()
+          internal void m_Utf8JsonReader()
           {
                // Locals ----------------------------------------------------------------------------------------------------------------------------
-               Utf8JsonReader reader = new Utf8JsonReader(Encoding.UTF8.GetBytes(jsonData),
+               Utf8JsonReader reader = new Utf8JsonReader(Encoding.UTF8.GetBytes(Program.jsonData),
                     new JsonReaderOptions
                     {
                          AllowTrailingCommas = true,
