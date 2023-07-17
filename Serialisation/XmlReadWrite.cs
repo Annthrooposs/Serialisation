@@ -22,7 +22,7 @@ namespace Serialisation
 
 
           // Methods --------------------------------------------------------------------------------------------------------------------------------
-          public void m_XmlReadWrite(string p_input, string p_output = null)
+          public void m_XmlReadWrite(string p_input, string? p_output = null)
           {
                // Locals ----------------------------------------------------------------------------------------------------------------------------
                XmlReaderSettings settingsReader = new XmlReaderSettings

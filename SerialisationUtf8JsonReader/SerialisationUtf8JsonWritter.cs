@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace SerialisationUtf8JsonReader
+namespace SerialisationUtf8Json
 {
-     internal class Utf8JsonReader
+     internal class SerialisationUtf8JsonWriter
      {
           // Fields ---------------------------------------------------------------------------------------------------------------------------------
-          string jsonData = """
-               {
-                    "nom"     : "POGAM",
-                    "prenom"  : "Jean-Charles",
-                    "age"     : 33
-               }
-               """;
-          Utf8JsonReader i_redear = new Utf8JsonReader(Encoding.UTF8.GetBytes(jsonData));
+
+
+
 
 
           // Properties -----------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -29,16 +25,38 @@ namespace SerialisationUtf8JsonReader
 
 
           // Methods --------------------------------------------------------------------------------------------------------------------------------
-          public void m_Utf8JsonReader()
+          internal void m_Utf8JsonWritter()
           {
                // Locals ----------------------------------------------------------------------------------------------------------------------------
+               using MemoryStream menStream = new MemoryStream();
 
+               using Utf8JsonWriter writer = new Utf8JsonWriter(menStream,
+                    new JsonWriterOptions
+                    {
+                         Indented = true
+                    }); ;
 
 
 
 
                // Treatment -------------------------------------------------------------------------------------------------------------------------
-               // Parcours du fichier XML
+               // Ecriture
+               writer.WriteStartObject();
+
+               writer.WritePropertyName("Nom");
+               writer.WriteStringValue("LOHEAC");
+
+               writer.WritePropertyName("PRENOM");
+               writer.WriteStringValue("Younick");
+
+               writer.WritePropertyName("Age");
+               writer.WriteNumberValue(33);
+
+               writer.WriteEndObject();
+
+               writer.Flush();
+               menStream.Position = 0;
+               Console.WriteLine(Encoding.UTF8.GetString(menStream.ToArray()));
           }
-     }
+}
 }
