@@ -6,12 +6,13 @@ internal class Program
      private static void Main(string[] args)
      {
           // Local variabless -----------------------------------------------------------------------------------------------------------------------
-          LaunchSerialisation l = new LaunchSerialisation();
+          LaunchSerialisation ls        = new LaunchSerialisation();
 
 
 
           // Routing --------------------------------------------------------------------------------------------------------------------------------
-          l.m_Serialisation();
+          //ls.m_Serialisation();
+          LaunchDeserialization.m_DeSerialisation("TP_03.txt");
      }
 }
 
